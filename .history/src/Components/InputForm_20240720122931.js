@@ -39,11 +39,6 @@ function InputForm() {
     return phoneRegex.test(phoneNumber);
   };
 
-  const okayHandler = () => {
-    setError("");
-    setSuccess("");
-  };
-
   const submitHandler = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -75,7 +70,7 @@ function InputForm() {
         reason: formdata.reason,
         note: formdata.note,
       });
-      //   console.log(res);
+      console.log(res);
       if (res.status === 201) {
         setFormdata({
           name: "",
@@ -97,9 +92,10 @@ function InputForm() {
         reason: "",
         note: "",
       });
-      //   console.log(error);
-      //   console.log(error?.response?.data?.error);
+      console.log(error);
+      console.log(error?.response?.data?.error);
     }
+    // setError("");
     setIsLoading(false);
   };
 
@@ -212,17 +208,13 @@ function InputForm() {
           {error && (
             <div className="text-lg border-red-500 border p-2 cursor-default text-red-500 rounded-lg">
               {error}
-              <span onClick={okayHandler} className="px-3 cursor-pointer">
-                &times;
-              </span>
+              <span className="px-3 cursor-pointer">&times;</span>
             </div>
           )}
           {success && (
             <div className="text-lg border-green-500 border p-2 cursor-default text-green-500 rounded-lg">
               {success}
-              <span onClick={okayHandler} className="px-3 cursor-pointer">
-                &times;
-              </span>
+              <span className="">&times;</span>
             </div>
           )}
           <button

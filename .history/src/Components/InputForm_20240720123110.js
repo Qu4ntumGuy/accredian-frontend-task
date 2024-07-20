@@ -75,7 +75,7 @@ function InputForm() {
         reason: formdata.reason,
         note: formdata.note,
       });
-      //   console.log(res);
+      console.log(res);
       if (res.status === 201) {
         setFormdata({
           name: "",
@@ -97,9 +97,10 @@ function InputForm() {
         reason: "",
         note: "",
       });
-      //   console.log(error);
-      //   console.log(error?.response?.data?.error);
+      console.log(error);
+      console.log(error?.response?.data?.error);
     }
+    // setError("");
     setIsLoading(false);
   };
 
