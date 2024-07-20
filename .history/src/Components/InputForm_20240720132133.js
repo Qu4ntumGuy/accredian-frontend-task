@@ -57,18 +57,15 @@ function InputForm() {
         !formdata.note
       ) {
         setError("All fields are required");
-        setIsLoading(false);
         return;
       }
       if (!validateEmail(formdata.email)) {
         setError("Invalid Email");
-        setIsLoading(false);
         return;
       }
       if (!validatePhoneNumber(formdata.phone)) {
         setError("Invalid Phone Number");
         return;
-        setIsLoading(false);
       }
       const res = await axios.post(`${url}/createReferral`, {
         name: formdata.name,
