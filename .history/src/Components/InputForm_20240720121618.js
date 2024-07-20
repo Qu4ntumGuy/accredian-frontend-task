@@ -219,7 +219,7 @@ function InputForm() {
             onClick={submitHandler}
             className="bg-[#1a73e8] hover:bg-blue-600 p-3 w-32 rounded-md text-white"
           >
-            {isloading ? "Submitting..." : "Submit"}
+            Submit
           </button>
         </div>
       </form>
